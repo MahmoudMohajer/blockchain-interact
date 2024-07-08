@@ -1,5 +1,4 @@
 from web3 import Web3, HTTPProvider 
-from web3.middleware import construct_sign_and_send_raw_middleware
 from dotenv import load_dotenv 
 import os 
 
@@ -11,7 +10,6 @@ PK = os.getenv("PK")
 w3 = Web3(Web3.HTTPProvider(RPC))
 
 account = w3.eth.account.from_key(PK)
-w3.middleware_onion.add(construct_sign_and_send_raw_middleware(account))
 w3.eth.default_account = account.address 
 
 # Recipient address
