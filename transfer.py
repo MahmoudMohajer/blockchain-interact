@@ -3,6 +3,8 @@ from web3.middleware import construct_sign_and_send_raw_middleware
 from dotenv import load_dotenv 
 import os 
 
+load_dotenv()
+
 RPC = os.getenv("SEPOLIA_RPC_URL")
 PK = os.getenv("PK")
 
