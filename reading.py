@@ -11,11 +11,10 @@ def read_json(filename):
 load_dotenv()
 
 RPC = os.getenv("SEPOLIA_RPC_URL")
-PK = os.getenv("PK")
 
 w3 = Web3(Web3.HTTPProvider(RPC))
 
-USDC_ADDRESS = "0xd98B590ebE0a3eD8C144170bA4122D402182976f"
+USDC_ADDRESS = "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8"
 abi = read_json("./abi/usdc.json")
 
 usdc_contract = w3.eth.contract(address=USDC_ADDRESS, abi=abi)
